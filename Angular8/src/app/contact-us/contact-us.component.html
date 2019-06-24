@@ -1,0 +1,55 @@
+<form class="example-form" [formGroup]="contactFormGroup" (ngSubmit)="submitContactForm(contactFormGroup.value)">
+    <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+      <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0">
+        <mat-card class="headerinformationtext m-r-0">
+          <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+              <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Name" formControlName="contactName">
+                </mat-form-field>
+                <mat-error>  
+                    <span *ngIf="!contactFormGroup.get('contactMobile').valid && contactFormGroup.get('contactName').touched">Enter Name</span>
+              </mat-error> 
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+              <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Mobile" formControlName="contactMobile">
+                </mat-form-field>
+                <mat-error>  
+                    <span *ngIf="!contactFormGroup.get('contactMobile').valid && contactFormGroup.get('contactMobile').touched">Enter Mobile Number</span>
+                </mat-error>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+              <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email" formControlName="contactEmail">
+                </mat-form-field>
+                <mat-error>  
+                    <span *ngIf="!contactFormGroup.get('contactEmail').valid && contactFormGroup.get('contactEmail').touched">Enter Email</span>
+                </mat-error>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+              <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0">
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Description" formControlName="contactDesciption"></textarea>
+                </mat-form-field>
+                <mat-error>  
+                    <span *ngIf="!contactFormGroup.get('contactDesciption').valid && contactFormGroup.get('contactDesciption').touched">Enter Your Description</span>
+                </mat-error>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="p-t-0 ">
+              <div fxFlex.gt-sm="100" fxFlex="100" class="p-b-0 text-right">
+                  <button mat-raised-button color="primary" class="submitbutton" [disabled]="!contactFormGroup.valid">Submit</button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </form>
